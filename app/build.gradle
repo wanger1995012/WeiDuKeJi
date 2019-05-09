@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'org.greenrobot.greendao'
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -16,6 +16,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    greendao {
+        schemaVersion 1
+        daoPackage 'com.wd.tech.weidukeji.greendao.gen'
+        targetGenDir 'src/main/java'
+    }
+
 }
 
 dependencies {
@@ -25,4 +32,33 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+
+//butterknife
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+
+    implementation 'com.youth.banner:banner:1.4.9'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.squareup.okhttp3:okhttp:3.7.0'
+//RecyclerView
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation 'com.jcodecraeer:xrecyclerview:1.2.0'
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    implementation 'com.github.bumptech.glide:annotations:4.9.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+//fresco
+    implementation 'com.facebook.fresco:fresco:1.13.0'
+
+    //only Retrofit（只用Retrofit联网）！！
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+
+//------------------------greenDao---------------------------//
+    implementation 'org.greenrobot:greendao:3.1.0'
+    implementation 'org.greenrobot:greendao-generator:3.1.0'
+
+
 }
