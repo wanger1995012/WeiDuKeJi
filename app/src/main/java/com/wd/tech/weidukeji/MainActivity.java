@@ -13,11 +13,5 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         text=findViewById(R.id.text_id);
-        text.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(MainActivity.this,"123",Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 }
